@@ -1,7 +1,7 @@
 # harris_vaccine_tracker
-- - - -
+
 A quick Python script to check the [Harris County Public Health COVID-19 Vaccination program website](https://vacstrac.hctx.net/landing) and send a SMS to a single number indicating whether appointments for eligible individuals are available to be booked.
-- - - -
+
 ## Requirements
 These instructions / code are intended to run on macOS using the system’s built in process scheduling module, `launchd`. 
 
@@ -32,6 +32,7 @@ To learn more, checkout:  [launchd.info](https://launchd.info/)
 - - - -
 ### Usage
 This tool currently requires knowledge of Python environments on macOS and familiarity with [`launchd`](https://launchd.info), an Apache licensed macOS framework for scheduling almost any task. 
+- - - - 
 #### Python Script standalone usage
 Instructions for running the script manually from your `tty`
 * verify the `Twilio-CLI` is properly logged in. 
@@ -41,7 +42,7 @@ Instructions for running the script manually from your `tty`
 	* Needs to include country code, `+1` (US) given as default.
 
 `python3 vaxstack.py`
-
+- - - - 
 #### Setting up the script scheduling
 Scheduling the script to run as the logged in user at certain intervals.
 
@@ -68,11 +69,14 @@ In `com.harriscountyvax.plist`:
 		<integer>0</integer>
 	</dict>	
 ```
-		* Run every hour
+		
+        * Run every hour
+
 ```
 	<key>StartInterval</key>
 	<integer>3600</integer>		
 ```
+
 	* For more information, check   [launchd.info](https://launchd.info/)  and head towards the **When to Start** section.
 * Edit **ProgramArguments** with the correct paths for the appropriate Python executable & the script itself on your local machine. 
 	* I recommend using full canonical paths with no shorthand for the script
