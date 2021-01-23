@@ -66,7 +66,7 @@ def twilio_send_true():
 
     message = client.messages \
                     .create(
-                         body=("Appointments may be avaiable! - \U0001F60E - check https://vacstrac.hctx.net/landing"),
+                         body=("Appointments may be available! - \U0001F60E - check https://vacstrac.hctx.net/landing"),
                         from_= sender,
                          to= receiver,
                      )
