@@ -8,11 +8,11 @@ These instructions / code are intended to run on macOS using the system’s buil
 For now it is reliant on the user to edit the appropriate files and put them in place on their system. 
 
 Once configured the launchd job will run the script at the assigned times, output to `/tmp/vaxmanage.log`, and use the Twilio-CLI with the proper environment variables to send the message. 
-- - - -
+
 # Why don’t you do this in cron?
 You can do cron on macOS, but launchd is officially supported and behaves better.
 To learn more, checkout:  [launchd.info](https://launchd.info/) 
-- - - -
+- - - - 
 ### Environment
 	
 * **[Twilio Account ](https://www.twilio.com/try-twilio)**
@@ -32,7 +32,7 @@ To learn more, checkout:  [launchd.info](https://launchd.info/)
 - - - -
 ### Usage
 This tool currently requires knowledge of Python environments on macOS and familiarity with [`launchd`](https://launchd.info), an Apache licensed macOS framework for scheduling almost any task. 
-- - - - 
+
 #### Python Script standalone usage
 Instructions for running the script manually from your `tty`
 * verify the `Twilio-CLI` is properly logged in. 
@@ -58,7 +58,7 @@ In `com.harriscountyvax.plist`:
 * Edit **StartCalendarInterval** and / or **StartInterval** with your own schedule
 	* **EXAMPLES:**
 		* Run at load, and everyday at 9am.
-
+        * Run every hour
 ```
 	<key>RunAtLoad</key>
 	<true/>
@@ -70,8 +70,6 @@ In `com.harriscountyvax.plist`:
 		<integer>0</integer>
 	</dict>	
 ```
-		
-        * Run every hour
 
 ```
 	<key>StartInterval</key>
@@ -88,7 +86,9 @@ In `com.harriscountyvax.plist`:
 	* I recommend double, triple, and quadruple checking the paths of your Python executable and where it has been installing modules.  
 
 ```diff
-+virtual environments are amazing and extremely useful but in my experience they are fragile and difficult to schedule correctly regardles of OS, and macOS is the most difficult in terms of Python version and module maintenance.
++virtual environments are amazing and extremely useful but in my experience 
+they are fragile and difficult to schedule correctly regardles of OS, 
+and macOS is the most difficult in terms of Python version and module maintenance.
 ```
 
 
