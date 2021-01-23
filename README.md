@@ -58,6 +58,7 @@ In `com.harriscountyvax.plist`:
 * Edit **StartCalendarInterval** and / or **StartInterval** with your own schedule
 	* **EXAMPLES:**
 		* Run at load, and everyday at 9am.
+
 ```
 	<key>RunAtLoad</key>
 	<true/>
@@ -77,12 +78,15 @@ In `com.harriscountyvax.plist`:
 	<integer>3600</integer>		
 ```
 
-	* For more information, check   [launchd.info](https://launchd.info/)  and head towards the **When to Start** section.
+	
+* For more information, check   [launchd.info](https://launchd.info/)  and head towards the **When to Start** section.
+
 * Edit **ProgramArguments** with the correct paths for the appropriate Python executable & the script itself on your local machine. 
 	* I recommend using full canonical paths with no shorthand for the script
 		* **DO:** `/Users/midsandhighs/src/vaxtrack.py`
 		* **DON’T:**  `~/src/vaxtrack.py`
 	* I recommend double, triple, and quadruple checking the paths of your Python executable and where it has been installing modules.  
+
 ```diff
 +virtual environments are amazing and extremely useful but in my experience they are fragile and difficult to schedule correctly regardles of OS, and macOS is the most difficult in terms of Python version and module maintenance.
 ```
